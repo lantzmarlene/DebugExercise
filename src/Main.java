@@ -20,7 +20,12 @@ public class Main {
 
     public static void minningTheBoard(int numberMines) {
         Random random = new Random();
-        while (numberMines > 0) {
+
+        for(int i = 0; i<myBoard.size(); i++){
+            myBoard.put(i, new Mine());
+        }
+        int noOfSpaces = myBoard.size() - numberMines;
+        while (noOfSpaces > 0) {
             Integer trial = new Integer(random.nextInt(myBoard.size()));
 
             if (myBoard.get(trial) instanceof Space) {
@@ -43,5 +48,7 @@ public class Main {
         minningTheBoard(1499999); //
         elapsedTime = (System.currentTimeMillis() - startingTime);
         System.out.println("1,499,999 bombs planted in " + elapsedTime + " milliseconds");
+
+        System.out.println("I really need help with Software Development... if you read this... send help pls");
     }
 }
